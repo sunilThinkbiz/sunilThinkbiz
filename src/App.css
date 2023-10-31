@@ -1,11 +1,4 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -14,7 +7,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url('https://wallpapers.com/images/hd/game-of-thrones-season-8-ice-fire-38ybjar2idac9hn7.jpg');
+ 
   min-height: 100vh;
   display: flex;
   flex-direction: column;

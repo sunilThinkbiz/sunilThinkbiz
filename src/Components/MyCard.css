@@ -1,0 +1,34 @@
+.my-card {
+  width: 18rem;
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.my-card .expanded {
+  height: 300px;
+}
+
+.my-card .collapsed {
+  height: 200px; /* You can adjust this height as needed */
+}
+
+.my-card-image {
+  width: 100%;
+  object-fit: cover;
+  transition: height 0.3s;
+}
+
+.my-card-description {
+  display: none;
+  transition: max-height 0.3s;
+}
+
+.my-card .visible .my-card-description {
+  display: block;
+}
+
+.my-card-description.visible {
+  max-height: 300px; /* You can adjust this max-height as needed */
+  overflow: hidden;
+}
