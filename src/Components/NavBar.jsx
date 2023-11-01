@@ -23,7 +23,7 @@ const NavBar = () => {
       </div>
       </div>
 
-      <div className="d-flex justify-content-center " style={{marginRight:"5px", }}>
+      <div className="d-flex @" style={{marginRight:"5px", }}>
         <form className="form-inline">
           <div className="input-group" style={{width:"400px"}}>
             <input

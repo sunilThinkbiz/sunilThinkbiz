@@ -1,31 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import './MyCard.css'; // Import your custom CSS file
+import {useNavigate} from "react-router-dom"
 
-function MyCard({ title, description, imageUrl, buttonText }) {
-  const [isDescriptionVisible, setDescriptionVisible] = useState(false);
+function MyCard({ title, description, imageUrl,releaseDate}) {
   
-  const toggleDescription = () => {
-    setDescriptionVisible(!isDescriptionVisible);
-  };
-
+const navigate=useNavigate()
+const handleClickDetails = () => {
+  navigate('/movie-detail', { state: { title, description, imageUrl,releaseDate } });
+};
   return (
-    <div className={`my-card`} onClick={toggleDescription}>
+    <div className={`my-card`} >
       <Card style={{ width: '18rem', height:'auto' }}>
-        {!isDescriptionVisible ? (
+      
           <Card.Img 
           variant="top" 
           src={imageUrl}
           style={{height:'300px'}}
         />
-        ) : ( 
-          <Card.Body>
+     
           <Card.Title>{title}</Card.Title>
-          <Card.Text>{description}</Card.Text>
-          <Button variant="primary">{buttonText}</Button>
-        </Card.Body>
-        )}
+          <div className='d-flex justify-content-between"'>
+          <Button variant="outline-dark">Edit</Button>
+          <Button onClick={handleClickDetails} variant="outline-dark">Details</Button>
+          <Button  variant="outline-dark">Delete</Button>
+          </div>
+       
+        
       </Card>
     </div>
   );
